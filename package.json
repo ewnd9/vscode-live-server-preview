@@ -7,8 +7,14 @@
   "engines": {
     "vscode": "^1.10.0"
   },
-  "categories": ["Other"],
-  "keywords": ["html", "livereload", "preview"],
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "html",
+    "livereload",
+    "preview"
+  ],
   "galleryBanner": {
     "color": "#1A237E",
     "theme": "dark"
@@ -22,7 +28,9 @@
   },
   "license": "MIT",
   "icon": "doc/img/icon.png",
-  "activationEvents": ["onCommand:extension.liveServerPreview.open"],
+  "activationEvents": [
+    "onCommand:extension.liveServerPreview.open"
+  ],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
@@ -45,7 +53,5 @@
     "typescript": "^2.0.3",
     "vscode": "^1.0.0"
   },
-  "dependencies": {
-    "live-server": "^1.2.0"
-  }
+  "dependencies": {}
 }

@@ -1,7 +1,5 @@
-'use strict';
-
 import * as vscode from 'vscode';
-import * as liveServer from 'live-server';
+import { Rc } from './types';
 
 export default class LiveServerContentProvider implements vscode.TextDocumentContentProvider {
   private _onDidChange: vscode.EventEmitter<vscode.Uri>;
@@ -15,7 +13,8 @@ export default class LiveServerContentProvider implements vscode.TextDocumentCon
   }
 
   provideTextDocumentContent(uri: vscode.Uri, token: vscode.CancellationToken): vscode.ProviderResult<string> {
-    const port = liveServer.server.address().port;
+    const rc: Rc = JSON.parse(uri.query);
+
     return `
       <html>
         <header>
@@ -32,7 +31,7 @@ export default class LiveServerContentProvider implements vscode.TextDocumentCon
         </header>
         <body>
           <div>
-            <iframe src="http://127.0.0.1:${port}${uri.path}" width="100%" height="100%" seamless frameborder=0>
+            <iframe src="http://127.0.0.1:${rc.port}" width="100%" height="100%" seamless frameborder=0>
             </iframe>
           </div>
         </body>

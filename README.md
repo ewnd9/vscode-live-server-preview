@@ -6,7 +6,17 @@ Preview your HTML file with localhost server live-reloading enabled.
 
 ## Usage
 
-* press 'F1' and type "Show Live Server Preview"
+* press 'ctrl+shift+p' and type "Show Live Server Preview"
+
+## Options
+
+You can specify the following options in the `/.preview.json`
+
+```json
+{
+  "port": 8080
+}
+```
 
 ## Licence
 
